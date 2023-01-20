@@ -8,7 +8,6 @@ import { UserDto, CreditCardDto, AddressDto } from './dto/user.dto';
 export class AppService {
   constructor(private readonly httpService: HttpService, 
     @Inject('DATABASE_CONNECTION') private db: Db) {
-      
     }
     
 
