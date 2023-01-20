@@ -1,0 +1,23 @@
+services:
+  ameer-proj:
+    build:
+      context: .
+      dockerfile: ./apps/ameer-proj/Dockerfile
+      target: development
+    command: npm run start:dev
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - '4001:4000'
+  b:
+    build:
+      context: .
+      dockerfile: ./apps/b/Dockerfile
+      target: development
+    command: npm run start:dev b
+    ports:
+      - '5001:5000'
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
